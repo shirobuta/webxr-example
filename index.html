@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"></script>
+        <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+        <script src="./script.js"></script>
+        <link rel="stylesheet" href="./style.css">
+    </head>
+    <body onload="onLoad()">
+        <div id="bg" class="background-container">
+            <div id="quote"></div>
+            <div id="author"></div>
+        </div>
+        <model-viewer 
+            id="astronaut" 
+            src="./assets/Astronaut.glb" 
+            alt="A 3D model of an astronaut" 
+            max-field-of-view ="180deg"
+            min-field-of-view ="0"
+            min-camera-orbit="auto auto -10m"
+            max-camera-orbit="auto auto 10m"
+            camera-orbit="50deg 70deg auto" 
+            camera-target="-1.5m .6m auto"
+            shadow-intensity="1" 
+            shadow-softness="1.2"
+            >
+            <button slot="hotspot-visor" data-position="0 1.75 0.35" data-normal="0 0 1" >
+                <div id="annotation">He'll be dead without his helmet.</div>
+            </button>
+            <button slot="hotspot-hand" data-position="-0.54 0.93 0.1" data-normal="-0.73 0.05 0.69">
+                <div id="annotation">No spaceman can do without his gloves.</div>
+            </button>
+            <button slot="hotspot-foot" data-position="0.16 0.1 0.17" data-normal="-0.07 0.97 0.23" >
+                <div id="annotation">Space rock. 'nuff said.</div>
+            </button>
+        </model-viewer>
+        <div id="pagination">
+            <div class="button active"></div>
+            <div class="button"></div>
+            <div class="button"></div>
+            <div class="button"></div>
+            <div class="button"></div>
+          </div>
+    </body>
+</html>

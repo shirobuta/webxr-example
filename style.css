@@ -1,0 +1,165 @@
+@font-face {
+    font-family: 'Montserrat-Regular';
+    src: url('./fonts/Montserrat/Montserrat-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Orbitron';
+    src: url('./fonts/Orbitron/Orbitron-VariableFont_wght.ttf');
+}
+
+html, body{
+    padding:0;
+    margin:0;
+    width:100%;
+    min-height: 100%;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+#bg{
+    width:100%;
+    height:100vh;
+    position: absolute;
+    top:0;
+    left:0;
+    padding:150px;
+    transition: all .8s;
+    clip-path: ellipse(0 0 at 0 0);
+    background:linear-gradient(#2193b0, #6dd5ed);
+    font-family: "Orbitron";
+    font-variation-settings: 'wght' 500;
+    font-size:50px;
+    color:rgba(255, 255, 255, 1);
+    display:flex;
+    flex-direction: column;
+}
+
+#bg.layout-0{
+    clip-path:ellipse(100% 150% at -30% 50%);
+    justify-content: center;
+    align-items: flex-start;    
+}
+#bg.layout-1{
+    clip-path:ellipse(100% 100% at 50% -20%);
+    justify-content: flex-start;
+    align-items: center;  
+    padding-top:100px;
+    text-align: center;  
+}
+
+#bg.layout-2{
+    clip-path:ellipse(100% 150% at 50% 180%);
+    justify-content: flex-end;
+    align-items: center;  
+    padding-bottom:100px;
+    text-align: center;  
+}
+
+#bg.layout-3{
+    clip-path:ellipse(100% 150% at 130% 50%);
+    justify-content: center;
+    align-items: flex-end; 
+    text-align: right;  
+}
+
+#bg.layout-4{
+    clip-path:none;
+    justify-content: flex-end;
+    align-items: center;  
+    padding-bottom:100px;
+    text-align: center;  
+    font-size:30px;
+}
+
+.background-container >div{
+    width:50%
+}
+
+.background-container >div#author{
+    margin-top:40px;
+    text-align: right;
+    font-size: .5em;
+}
+
+model-viewer{
+    width:100%;
+    height:100vh;
+    background-color:unset;
+    opacity: 0;
+    --poster-color: transparent;
+    transition:opacity .3s
+}
+
+model-viewer button{
+    display:none;
+}
+
+model-viewer[data-show-anon] button{
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: blue;
+    box-sizing: border-box;
+}
+
+button[data-active]{
+    --min-hotspot-opacity: 0;
+    background-color: red !important;
+}
+button #annotation{
+    background-color: #888888;
+    color:white;
+    position: absolute;
+    transform: translate(10px, 10px);
+    border-radius: 10px;
+    padding: 10px;
+    width:100px;
+}
+
+button #annotation{
+    opacity:0;
+    transition: opacity .3s;
+}
+button[data-active] #annotation{
+    opacity:1;
+}
+/* This keeps child nodes hidden while the element loads */
+:not(:defined) > * {
+    display: none;
+}
+
+#pagination{
+    position: absolute;
+    left:40px;
+    top:40px;
+    width:200px;
+}
+
+#pagination .button
+{
+    width: 15px;
+    height: 10px;
+    float: left;
+    margin-right: 10px;
+    background-color: rgba(0,0,0,.3);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s ease width;
+}
+
+#pagination .button:last-child
+{
+    margin-right: 0;
+}
+
+#pagination .button.active
+{
+    width: 30px;
+    cursor: auto;
+}
+  
